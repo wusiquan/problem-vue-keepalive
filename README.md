@@ -1,29 +1,8 @@
 # problem-vue-keepalive
 
-## Project setup
-```
-npm install
-```
+## 使用
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+目前想到三种解决方式:
+* remove后this.$nextTick add
+* 强制从cache中删除
+* 自己写个keep-alive-wrapper组件
