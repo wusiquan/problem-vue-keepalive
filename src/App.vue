@@ -18,10 +18,10 @@ export default {
 
 html, body {
   .size;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-  }
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
 
   #app {
     .size;
