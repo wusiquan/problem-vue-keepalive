@@ -9,7 +9,7 @@
         :name="item.name"
         :data-route-item="item"
         color="default"
-      >aaa</Tag>
+      >{{ item.meta.title }}</Tag>
     </transition-group>
   </div>
 </template>

@@ -12,9 +12,9 @@ export default new Router({
       component: Main,
       children: [
         {
-          path: 'phase-manage',
-          name: 'phase_manage',
-          component: () => import(/* webpackChunkName: "phase-manage" */ '@/views/phase-manage/index')
+          path: 'a-page',
+          name: 'a_page',
+          component: () => import(/* webpackChunkName: "a-page" */ '@/views/a-page/index')
         }
       ]
     }

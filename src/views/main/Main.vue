@@ -1,7 +1,7 @@
 <template>
   <Layout style="height: 100%" class="main">
     <Sider :width="256" class="left-sider" :style="{overflow: 'hidden'}">
-      <side-menu></side-menu>
+      <side-menu @on-select="turnToPage"></side-menu>
     </Sider>
     <Layout>
       <Header class="header-con">
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 import SideMenu from './side-menu'
 import TagsNav from './tags-nav'
 
@@ -34,18 +35,40 @@ export default {
 
   data() {
     return {
-      tagNavList: [],
       cacheList: []
     }
   },
 
-  methods: {
-    handleClick() {
+  computed: {
+    tagNavList() {
+      return this.$store.state.app.tagNavList
+    }
+  },
 
+  methods: {
+    ...mapMutations([
+      'addTag'
+    ]),
+
+    turnToPage(name) {
+      console.log(name)
+      this.$router.push(name)
+    },
+
+    handleClick() {
+      
     },
 
     handleCloseTag() {
 
+    }
+  },
+
+  watch: {
+    $route(to) {
+      this.addTag({
+        route: to
+      })
     }
   }
 }
