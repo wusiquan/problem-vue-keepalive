@@ -6,15 +6,15 @@
           <template slot="title">
             <Icon type="ios-book"/>a-submenu
           </template>
-          <MenuItem name="a-page">a-page</MenuItem>
-          <MenuItem name="a-child-page">a-child-page</MenuItem>
-          <MenuItem name="a-parent-page">a-parent-page</MenuItem>
+          <MenuItem name="a-page">aPage</MenuItem>
+          <MenuItem name="a-child-page">aChildPage</MenuItem>
+          <MenuItem name="a-parent-page">aParentPage</MenuItem>
         </Submenu>
         <Submenu name="b-submenu">
           <template slot="title">
             <Icon type="ios-book"/>b-submenu
           </template>
-          <MenuItem name="b-page">b-page</MenuItem>
+          <MenuItem name="b-page">bPage</MenuItem>
         </Submenu>
       </Menu>
     </Col>
@@ -23,9 +23,8 @@
 
 <script>
 export default {
-
   methods: {
-    handleSelect() {
+    handleSelect(name) {
       this.$emit('on-select', name)
     }
   }

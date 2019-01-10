@@ -51,7 +51,6 @@ export default {
     ]),
 
     turnToPage(name) {
-      console.log(name)
       this.$router.push(name)
     },
 
@@ -66,6 +65,7 @@ export default {
 
   watch: {
     $route(to) {
+      console.log(to)
       this.addTag({
         route: to
       })
