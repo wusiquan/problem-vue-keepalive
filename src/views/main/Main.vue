@@ -9,7 +9,7 @@
       <Content class="main-content-con">
         <Layout class="main-layout-con">
           <div class="tag-nav-wrapper">
-            <tags-nav :value="$route" @input="handleClick" :list="tagNavList" @on-close="handleCloseTag"/>
+            <tags-nav :value="currentRouteName" @input="handleClick" :list="tagNavList" @on-close="handleCloseTag"/>
           </div>
           <Content class="content-wrapper">
             <keep-alive :include="cacheList">
@@ -24,8 +24,8 @@
 
 <script>
 import { mapMutations } from 'vuex'
-import SideMenu from './side-menu'
-import TagsNav from './tags-nav'
+import SideMenu from './side-menu/side-menu'
+import TagsNav from './tags-nav/tags-nav'
 
 export default {
   components: {
@@ -35,7 +35,8 @@ export default {
 
   data() {
     return {
-      cacheList: []
+      cacheList: [],
+      currentRouteName: ''
     }
   },
 
@@ -65,9 +66,12 @@ export default {
 
   watch: {
     $route(to) {
-      console.log(to)
       this.addTag({
         route: to
+      })
+
+      this.$nextTick(() => {
+        this.currentRouteName = to.name
       })
     }
   }

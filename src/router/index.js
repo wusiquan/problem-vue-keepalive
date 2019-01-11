@@ -17,7 +17,7 @@ export default new Router({
           meta: {
             title: 'a页面'
           },
-          component: () => import(/* webpackChunkName: "mypage" */ '@/views/a-page/index')
+          component: () => import(/* webpackChunkName: "mypage" */ '@/views/a-page/a-page')
         },
         {
           path: 'a-child-page',
@@ -25,7 +25,7 @@ export default new Router({
           meta: {
             title: 'a子页面'
           },
-          component: () => import(/* webpackChunkName: "mypage" */ '@/views/a-child-page/index')
+          component: () => import(/* webpackChunkName: "mypage" */ '@/views/a-child-page/a-child-page')
         },
         {
           path: 'a-parent-page',
@@ -33,7 +33,7 @@ export default new Router({
           meta: {
             title: 'a父页面'
           },
-          component: () => import(/* webpackChunkName: "mypage" */ '@/views/a-parent-page/index')
+          component: () => import(/* webpackChunkName: "mypage" */ '@/views/a-parent-page/a-parent-page')
         },
         {
           path: 'b-page',
@@ -41,7 +41,7 @@ export default new Router({
           meta: {
             title: 'b页面'
           },
-          component: () => import(/* webpackChunkName: "mypage" */ '@/views/b-page/index')
+          component: () => import(/* webpackChunkName: "mypage" */ '@/views/b-page/b-page')
         },
       ]
     }

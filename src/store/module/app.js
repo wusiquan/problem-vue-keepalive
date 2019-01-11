@@ -1,4 +1,5 @@
 
+
 export default {
   state: {
     tagNavList: []
@@ -10,9 +11,14 @@ export default {
     },
 
     addTag(state, { route }) {
-      // if (!state.includes(route))
-      state.tagNavList.push(route)
-      console.log('addtag', route)
+      let hasTag = state.tagNavList.some(tagNav => {
+        return tagNav.name == route.name
+      })
+
+      if (!hasTag) {
+        state.tagNavList.push(route)
+      }
+
     }
   }
 }
