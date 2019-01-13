@@ -5,6 +5,7 @@ import Main from '@/views/main/Main'
 Vue.use(Router)
 
 export default new Router({
+  // TODO: 这里有一个隐形的规则，path和name一致，具体再看Menu组件
   routes: [
     {
       path: '/',
@@ -13,15 +14,16 @@ export default new Router({
       children: [
         {
           path: 'a-page',
-          name: 'a_page',
+          name: 'a-page',
           meta: {
-            title: 'a页面'
+            title: 'a页面',
+            keepAlive: true
           },
           component: () => import(/* webpackChunkName: "mypage" */ '@/views/a-page/a-page')
         },
         {
           path: 'a-child-page',
-          name: 'a_child_page',
+          name: 'a-child-page',
           meta: {
             title: 'a子页面'
           },
@@ -29,15 +31,16 @@ export default new Router({
         },
         {
           path: 'a-parent-page',
-          name: 'a_parent_page',
+          name: 'a-parent-page',
           meta: {
-            title: 'a父页面'
+            title: 'a父页面',
+            keepAlive: true
           },
           component: () => import(/* webpackChunkName: "mypage" */ '@/views/a-parent-page/a-parent-page')
         },
         {
           path: 'b-page',
-          name: 'b_page',
+          name: 'b-page',
           meta: {
             title: 'b页面'
           },
