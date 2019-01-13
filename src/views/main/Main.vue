@@ -1,7 +1,7 @@
 <template>
   <Layout style="height: 100%" class="main">
     <Sider :width="256" class="left-sider" :style="{overflow: 'hidden'}">
-      <side-menu @on-select="turnToPage"></side-menu>
+      <side-menu :active-name="currentRouteName" @on-select="turnToPage"></side-menu>
     </Sider>
     <Layout>
       <Header class="header-con">
@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       cacheList: [],
-      currentRouteName: ''
+      currentRouteName: this.$route.name
     }
   },
 
@@ -44,6 +44,12 @@ export default {
     tagNavList() {
       return this.$store.state.app.tagNavList
     }
+  },
+
+  created() {
+    this.addTag({
+      route: this.$route
+    })
   },
 
   methods: {
@@ -56,11 +62,11 @@ export default {
     },
 
     handleClick() {
-      
+      console.log('tag click')
     },
 
     handleCloseTag() {
-
+      console.log('tag close')
     }
   },
 
@@ -70,6 +76,7 @@ export default {
         route: to
       })
 
+      // 为了给它tag加enter transition所以搞了个nextTick
       this.$nextTick(() => {
         this.currentRouteName = to.name
       })

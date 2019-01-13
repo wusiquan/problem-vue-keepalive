@@ -8,6 +8,7 @@
         ref="tagsPageOpened"
         :key="`tag-nav-${item.name}`"
         :name="item.name"
+        :closable="true"
         :color="item.name == value ? 'primary' : 'default'"
       >
         {{ item.meta.title }}
