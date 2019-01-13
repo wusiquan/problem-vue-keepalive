@@ -10,8 +10,8 @@
           <div class="tag-nav-wrapper">
             <tags-nav
               :value="currentRouteName"
-              @input="handleClick"
               :list="tagNavList"
+              @handle-click="handleClick"
               @on-close="handleCloseTag"
             />
           </div>
@@ -97,8 +97,8 @@ export default {
       this.$router.push(name)
     },
 
-    handleClick() {
-      console.log('tag click')
+    handleClick(routeName) {
+      this.turnToPage(routeName)
     },
 
     handleCloseTag() {

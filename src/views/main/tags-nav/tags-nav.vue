@@ -10,6 +10,7 @@
         :name="item.name"
         :closable="true"
         :color="item.name == value ? 'primary' : 'default'"
+        @click.native="handleClick(item.name)"
       >
         {{ item.meta.title }}
       </Tag>
@@ -26,6 +27,13 @@ export default {
       default () {
         return []
       }
+    }
+  },
+
+  methods: {
+    handleClick(routeName) {
+      console.log(123)
+      this.$emit('handle-click', routeName)
     }
   }
 }
