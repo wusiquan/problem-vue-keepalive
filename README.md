@@ -12,7 +12,7 @@ https://github.com/iview/iview-admin/
 * 需要缓存的组件名始终在include中，然后根据情况如在 beforeRouteLeave时 强制从cache中删除
   (如果子更新了数据，返回的时候可以在activated和deactivated里处理)
 
-  A -> A子页面 -> A  结果: A应该被缓存
+  A -> A子页面 -> A  结果: A应该被缓存  
   A -> B页面 -> B    结果: A不应该被缓存
 
 * 需要缓存的组件名始终在include中，然后在组件的 activated, deactivated 生命周期去搞

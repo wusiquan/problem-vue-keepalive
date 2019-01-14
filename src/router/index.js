@@ -9,9 +9,16 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
       component: Main,
       children: [
+        {
+          path: '',
+          name: 'home',
+          meta: {
+            title: '首页'
+          },
+          component: () => import(/* webpackChunkName: "mypage" */ '@/views/home/home')
+        },
         {
           path: 'a-page',
           name: 'a-page',

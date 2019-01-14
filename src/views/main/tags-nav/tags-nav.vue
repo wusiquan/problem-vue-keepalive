@@ -8,7 +8,7 @@
         ref="tagsPageOpened"
         :key="`tag-nav-${item.name}`"
         :name="item.name"
-        :closable="true"
+        :closable="item.name === 'home' ? false : true"
         :color="item.name == value ? 'primary' : 'default'"
         @click.native="handleClick(item.name)"
       >
@@ -32,7 +32,6 @@ export default {
 
   methods: {
     handleClick(routeName) {
-      console.log(123)
       this.$emit('handle-click', routeName)
     }
   }

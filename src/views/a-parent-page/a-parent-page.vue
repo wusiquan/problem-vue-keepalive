@@ -9,6 +9,8 @@
 import Counter from '@/components/Counter'
 
 export default {
+  name: 'AParentPage',
+
   components: {
     Counter
   },
@@ -21,7 +23,7 @@ export default {
     let keepAliveMap = {
       'a-page': 1
     }
-
+    
     if (!keepAliveMap[to.name]) {
       // destroy...
       let vnode = this.$vnode

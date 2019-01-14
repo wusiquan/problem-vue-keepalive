@@ -61,11 +61,9 @@ export default {
   },
 
   created() {
-    if (this.$route.name !== 'home') {
-      this.addTag({
-        route: this.$route
-      })
-    }
+    this.addTag({
+      route: this.$route
+    })
   },
 
   methods: {
