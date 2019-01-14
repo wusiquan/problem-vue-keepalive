@@ -7,7 +7,7 @@ export default {
 
   mutations: {
     setTagNavList (state, list) {
-    
+      state.tagNavList = list
     },
 
     addTag(state, { route }) {

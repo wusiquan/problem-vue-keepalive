@@ -43,7 +43,7 @@ export default {
   transition: transform  .5s;
 
   .ivu-tag-dot-inner {
-    transition: background 1  s;
+    transition: background 1s;
   }
 }
 

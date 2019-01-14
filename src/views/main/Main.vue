@@ -61,6 +61,13 @@ export default {
   },
 
   created() {
+    const { route: homeRoute }  = this.$router.resolve('/')
+
+    this.addTag({
+      route: homeRoute
+    })
+    
+    // 加过首页其实也无所谓，addTag会判断
     this.addTag({
       route: this.$route
     })
@@ -68,6 +75,7 @@ export default {
 
   methods: {
     ...mapMutations([
+      'setTagNavList',
       'addTag'
     ]),
 
@@ -92,7 +100,7 @@ export default {
     // },
 
     turnToPage(name) {
-      this.$router.push(name)
+      this.$router.push({ name })
     },
 
     handleClick(routeName) {
